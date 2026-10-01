@@ -1,8 +1,9 @@
 import Link from "next/link";
-import {UserButton ,auth} from '@clerk/nextjs'
-const Header = () => {
+import { UserButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
+const Header = async () => {
 
-  const {userId} =auth();
+  const { userId } = await auth();
   console.log(userId)
 
   return (
